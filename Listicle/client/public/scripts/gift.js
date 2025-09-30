@@ -39,7 +39,7 @@ const renderGift = async () => {
     document.getElementById('rarity').textContent = 'Rarity: ' + (gift.rarity || 'N/A');
     document.getElementById('cardType').textContent = 'Card Type: ' + (gift.cardType || 'Not Specified');
     document.getElementById('description').textContent = gift.description || 'No description available.';
-    document.title = `UnEarthed - ${gift.name || 'Gift Details'}`;
+    document.title = `Listicle - ${gift.name || 'Gift Details'}`;
 };
 
 // Call the function to render the gift when the page loads

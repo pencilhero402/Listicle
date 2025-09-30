@@ -17,7 +17,7 @@ headerLogo.style.height = 'auto'; // Maintain aspect ratio
 headerLogo.style.marginRight = '10px'; // Add some space between the logo and title
 
 const headerTitle = document.createElement('h1');
-headerTitle.textContent = 'UnEarthed'; // Title text
+headerTitle.textContent = 'Listicle'; // Title text
 
 headerLeft.appendChild(headerLogo);
 headerLeft.appendChild(headerTitle);
