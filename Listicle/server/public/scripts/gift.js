@@ -38,7 +38,7 @@ const renderGift = async () => {
     document.getElementById('pricePoint').textContent = 'Price: ' + (gift.pricePoint || 'N/A');
     document.getElementById('audience').textContent = 'Great For: ' + (gift.audience || 'Not Specified');
     document.getElementById('description').textContent = gift.description || 'No description available.';
-    document.title = `UnEarthed - ${gift.name || 'Gift Details'}`;
+    document.title = `Listicle - ${gift.name || 'Gift Details'}`;
 };
 
 // Call the function to render the gift when the page loads

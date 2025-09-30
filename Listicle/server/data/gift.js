@@ -2,9 +2,9 @@ const giftData = [
   {
       "id": 1,
       "name": "Barbarians",
-      "elixir": "5",            // pricePoint
+      "elixir": "5",            
       "rarity": "Common",
-      "cardType": "Troop",      // audience
+      "cardType": "Troop",   
       "image":"https://www.noff.gg/clash-royale/res/img/cards/barbarians.webp",
       "description":" A horde of melee attackers with mean mustaches and even meaner tempers.",
       "cardUsage":"2%",
