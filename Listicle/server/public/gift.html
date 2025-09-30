@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Details</title>
+    <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Link to your JavaScript files -->
+    <script defer src="/scripts/header.js"></script>
+    <script defer src="/scripts/gift.js"></script>
+</head>
+
+<body>
+    <!-- Header element, will be populated dynamically by header.js -->
+    <header></header>
+
+    <!-- Main content area -->
+    <main id="gift-content" class="gift-info">
+        <!-- Image container for the gift's image -->
+        <div class="image-container">
+            <img id="image" src="" alt="Gift Image">
+        </div>
+
+        <!-- Gift details container -->
+        <div class="gift-details">
+            <h2 id="name"></h2>
+            <p id="submittedBy"></p>
+            <p id="submittedOn"></p>
+            <p id="pricePoint"></p>
+            <p id="audience"></p>
+            <p id="description"></p>
+        </div>
+    </main>
+</body>
+
+</html>

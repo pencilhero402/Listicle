@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Details</title>
+    <!-- Link to your stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Link to your JavaScript files -->
+    <script defer src="/scripts/header.js"></script>
+    <script defer src="/scripts/gift.js"></script>
+
+    <!-- Background -->
+     <style>
+        body {
+            background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp11177140.jpg&f=1&nofb=1&ipt=f3e6673e9d3ff343e8178e87ca7513222edf291a4bc5bb625d30c3f362273516");
+        }
+     </style>
+</head>
+
+<body>
+    <!-- Header element, will be populated dynamically by header.js -->
+    <header></header>
+
+    <!-- Main content area -->
+    <main id="gift-content" class="gift-info">
+        <!-- Image container for the gift's image -->
+        <div class="image-container">
+            <img id="image" src="" alt="Gift Image">
+        </div>
+
+        <!-- Gift details container -->
+        <div class="gift-details">
+            <h2 id="name"></h2>
+            <p id="cardUsage"></p>
+            <p id="elixir"></p>
+            <p id="cardType"></p>
+            <p id="rarity"></p>
+            <p id="description"></p>
+        </div>
+    </main>
+</body>
+
+</html>
