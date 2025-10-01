@@ -1,45 +1,73 @@
-const renderGift = async () => {
-    // 1. Parse the requested ID from the URL
-    const requestedID = parseInt(window.location.href.split('/').pop());
+const renderGifts = async () => {
+    let endpoint = '/gifts'; // Default to the `/gifts` endpoint for all gifts
 
-    // Make sure the requested ID is a valid number
-    if (isNaN(requestedID)) {
-        window.location.href = '../404.html'; // Redirect to 404 if the ID is invalid
-        return;
+    // Check if we are on the '/troops' page
+    if (window.location.pathname.includes('/troops')) {
+        endpoint = '/troops'; // Fetch only troops
     }
 
-    // 2. Fetch the gift data
-    const response = await fetch('/gifts');
+    // Fetch the gift data from the server
+    const response = await fetch(endpoint);
     const data = await response.json();
+    
+    // Get the mainContent element where the gifts will be rendered
+    const mainContent = document.getElementById('main-content');
 
-    // 3. Get the gift content element
-    const giftContent = document.getElementById('gift-content');
-    if (!giftContent) {
-        console.error('Gift content element not found!');
-        return;
+    // Clear any previous content in mainContent (if any)
+    mainContent.innerHTML = '';
+
+    // If data is available, render the gift cards
+    if (data && data.length > 0) {
+        data.forEach(gift => {
+            // Create the card container
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            // Create the top container and set the background image
+            const topContainer = document.createElement('div');
+            topContainer.classList.add('top-container');
+            topContainer.style.backgroundImage = `url(${gift.image})`;
+
+            // Create the bottom container
+            const bottomContainer = document.createElement('div');
+            bottomContainer.classList.add('bottom-container');
+
+            // Add the gift name
+            const name = document.createElement('h3');
+            name.textContent = gift.name;
+            bottomContainer.appendChild(name);
+
+            // Add the elixir
+            const elixir = document.createElement('p');
+            elixir.textContent = 'Elixir: ' + gift.elixir;
+            bottomContainer.appendChild(elixir);
+
+            // Add the card type
+            const cardType = document.createElement('p');
+            cardType.textContent = 'Card Type: ' + gift.cardType;
+            bottomContainer.appendChild(cardType);
+
+            // Add the "Read More" link
+            const link = document.createElement('a');
+            link.textContent = 'Read More >';
+            link.setAttribute('role', 'button');
+            link.href = `/gifts/${gift.id}`;
+            bottomContainer.appendChild(link);
+
+            // Append top and bottom containers to the card
+            card.appendChild(topContainer);
+            card.appendChild(bottomContainer);
+
+            // Append the card to mainContent
+            mainContent.appendChild(card);
+        });
+    } else {
+        // If no gifts, display the "No Gifts Available" message
+        const message = document.createElement('h2');
+        message.textContent = 'No Gifts Available 😞';
+        mainContent.appendChild(message);
     }
-
-    let gift = null;
-    if (data) {
-        // 4. Find the specific gift based on the requested ID
-        gift = data.find(gift => gift.id === requestedID);
-    }
-
-    // 5. Redirect to 404.html if no gift is found
-    if (!gift) {
-        window.location.href = '../404.html'; // Redirect to 404 if gift not found
-        return;
-    }
-
-    // 6. If gift is found, render its details
-    document.getElementById('image').src = gift.image || '';  // Handle missing image gracefully
-    document.getElementById('name').textContent = gift.name || 'Gift Name Unavailable';
-    document.getElementById('submittedBy').textContent = 'Submitted by: ' + (gift.submittedBy || 'Unknown');
-    document.getElementById('pricePoint').textContent = 'Price: ' + (gift.pricePoint || 'N/A');
-    document.getElementById('audience').textContent = 'Great For: ' + (gift.audience || 'Not Specified');
-    document.getElementById('description').textContent = gift.description || 'No description available.';
-    document.title = `Listicle - ${gift.name || 'Gift Details'}`;
 };
 
-// Call the function to render the gift when the page loads
-renderGift();
+// Call the function to render the gifts
+renderGifts();

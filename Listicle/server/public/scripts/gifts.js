@@ -30,15 +30,15 @@ const renderGifts = async () => {
             name.textContent = gift.name;
             bottomContainer.appendChild(name);
 
-            // Add the price point
-            const pricePoint = document.createElement('p');
-            pricePoint.textContent = 'Price: ' + gift.pricePoint;
-            bottomContainer.appendChild(pricePoint);
+            // Add the elixir
+            const elixir = document.createElement('p');
+            elixir.textContent = 'Elixir: ' + gift.elixir;
+            bottomContainer.appendChild(elixir);
 
-            // Add the audience
-            const audience = document.createElement('p');
-            audience.textContent = 'Great For: ' + gift.audience;
-            bottomContainer.appendChild(audience);
+            // Add the card type
+            const cardType = document.createElement('p');
+            cardType.textContent = 'Card Type: ' + gift.cardType;
+            bottomContainer.appendChild(cardType);
 
             // Add the "Read More" link
             const link = document.createElement('a');
