@@ -1,4 +1,4 @@
-# WEB103 Project 2 - *Name of App Here*
+# WEB103 Project 2 - *Listicle*
 
 Submitted by: **Axin Li**
 
@@ -29,7 +29,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/FgbEjnN.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap GIF tool here
@@ -41,7 +41,7 @@ GIF created with Kap GIF tool here
 ## Notes
 
 Describe any challenges encountered while building the app or any additional context you'd like to add.
-
+WIP for displaying page for items with specific attributes such as card type, rarity, and usage.
 ## License
 
 Copyright [2025] [Axin Li]
